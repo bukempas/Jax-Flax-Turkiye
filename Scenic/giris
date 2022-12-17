@@ -1,0 +1,11 @@
+Scenic, bilgisayarlı Görü (Computer Vision) için Attention (Dikkat) tabanlı modeller etrafında araştırmaya odaklanan bir kod tabanıdır. 
+
+Scenic, görüntüler, video, ses ve bunların çok modlu kombinasyonları dahil olmak üzere çoklu modaliteler için sınıflandırma, segmentasyon ve algılama 
+modelleri geliştirmek için başarıyla kullanılmıştır.
+
+Daha açık bir ifadeyle Scenic, 
+(i) büyük ölçekli (ör. çok cihazlı, çok ana bilgisayarlı) görüntü modellerini eğitirken yaygın olarak karşılaşılan görevleri çözen 
+bir dizi paylaşılan hafif kitaplıktır; 
+ve (ii) bu kitaplıkları kullanan, tamamen detaylandırılmış probleme özel eğitim ve değerlendirme döngüleri içeren birkaç proje.
+
+Scenic, JAX'te geliştirilmiştir ve Flax kullanır.
