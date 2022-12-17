@@ -1,3 +1,5 @@
+https://github.com/google-research/scenic
+
 Scenic, bilgisayarlı Görü (Computer Vision) için Attention (Dikkat) tabanlı modeller etrafında araştırmaya odaklanan bir kod tabanıdır. 
 
 Scenic, görüntüler, video, ses ve bunların çok modlu kombinasyonları dahil olmak üzere çoklu modaliteler için sınıflandırma, segmentasyon ve algılama 
@@ -9,3 +11,21 @@ bir dizi paylaşılan hafif kitaplıktır;
 ve (ii) bu kitaplıkları kullanan, tamamen detaylandırılmış probleme özel eğitim ve değerlendirme döngüleri içeren birkaç proje.
 
 Scenic, JAX'te geliştirilmiştir ve Flax kullanır.
+
+Scenic, büyük ölçekli görüntü modellerinin hızlı prototiplenmesini kolaylaştırmayı amaçlar. Kodun anlaşılmasını ve genişletilmesini basit tutmak için, 
+karmaşıklık eklemek veya soyutlamayı artırmak yerine çatallama ve kopyala-yapıştır işlemini tercih ediyoruz. 
+Yalnızca işlevselliğin birçok model ve görevde yaygın olarak yararlı olduğu kanıtlandığında, Scenic'in paylaşılan kitaplıklarına akış yukarı aktarılabilir.
+
+
+
+Citing Scenic
+If you use Scenic, you can cite our white paper. Here is an example BibTeX entry:
+
+@InProceedings{dehghani2021scenic,
+    author    = {Dehghani, Mostafa and Gritsenko, Alexey and Arnab, Anurag and Minderer, Matthias and Tay, Yi},
+    title     = {Scenic: A JAX Library for Computer Vision Research and Beyond},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    year      = {2022},
+    pages     = {21393-21398}
+}
+Disclaimer: This is not an official Google product.
