@@ -1,0 +1,34 @@
+# Aşağıdaki sayısal fonksiyonu düşünelim :
+
+def fn(x,y):
+ return x**2 + y
+
+# Sonuç fn fonksiyonu, python fonksiyonu gibi değerlendirilir
+# fn(1., 2.) # (1**2 + 2) = 3
+
+def fn(x,y):
+ return x**2 + y
+ 
+# Bir önceki fonksiyonun gradyanı da bir fonksiyondur
+df_dx = grad(fn)
+df_dx(1., 2.) # df_dx = 2*x = 2*1 = 2
+
+# İkinci derece gradyanı da bir fonksiyondur
+df2_dx = grad(grad(fn))
+df2_dx(1., 2.) # df2_dx = d(2*x)_dx = 2
+
+# Jit derleyici ile de yapılınca bir fonksiyondur
+df2_dx = jit(grad(grad(fn))) is also a function
+df2_dx(1., 2.) # 2, kodu takip eder ve işlem yapar.
+
+# Yığın (batch) haline getirilmiş (vmap derleyici ile) yapılmış 2. derece gradyan da bir fonksiyondur
+df2_dx = vmap(jit(grad(grad(fn))))
+xs = jnp.ones((batch_size,))
+df2_dx(xs, 2 * xs) # [2, 2], if batch_size=2
+
+# çoklu-gpu ile arttırılmış, yığınlanmış 2. derece gradyan da bir fonksiyondur
+df2_dx = pmap(vmap(jit(grad(grad(fn)))))
+xs = jnp.ones((num_gpus, batch_size,))
+df2_dx(xs, 2 * xs) # [[2, 2], [2, 2]], if batch_size=2 & num_gpus=2
+
+# JAX at DeepMind dokumanından alınmıştır.
