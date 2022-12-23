@@ -32,3 +32,22 @@ xs = jnp.ones((num_gpus, batch_size,))
 df2_dx(xs, 2 * xs) # [[2, 2], [2, 2]], if batch_size=2 & num_gpus=2
 
 # JAX at DeepMind dokumanından alınmıştır.
+
+
+## Jax ile lineer regresyon ve derleyici kullanımları
+import jax.numpy as jnp
+from jax import grad, jit, vmap
+ 
+def predict(params, inputs):
+   for W, b in params;
+       outputs = jnp.dot(inputs, W) + b
+       inputs = jnp.tanh(outputs)
+   return outputs
+ 
+def loss(params, batch):
+    inputs, targets = batch
+    preds = predict(params, inputs)
+    return jnp.sum((preds-targets)**2)
+ 
+gradient_fn = jit(grad(loss))
+ex_grads = jit(vmap(grad(loss), in_axes = (None, 0)))
